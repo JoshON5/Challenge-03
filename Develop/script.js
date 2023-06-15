@@ -5,7 +5,7 @@
 //for password to generate an alert for at least one criteria should be checked should appear
 //checked options will then be used to generate the password in an empty string
 //Password generated should pop up in a window or appear in the HTML element
-var chars = {
+const chars = {
   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   lowercase: "abcdefghijklmnopqrstuvwxyz",
   numbers: "0123456789",
@@ -14,7 +14,7 @@ var chars = {
 
 
 
- let Pchars = [
+ const Pchars = [
   function uppercase() {
     return chars.uppercase[Math.floor(Math.random * chars.uppercase.length)];
   },
