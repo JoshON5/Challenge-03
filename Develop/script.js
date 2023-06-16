@@ -96,7 +96,7 @@ var passLower;
 
 function generatePassword() {
   var passLength = prompt("How long of a password do you require?");
-  while (passLength <= 8 || passLength >= 128) {
+  while (passLength < 8 || passLength > 128) {
     alert("Password must be between 8-128 characters");
     var passLength = prompt("How long of a password do you require?");
   }
@@ -110,7 +110,7 @@ function generatePassword() {
     "Confirm if you would want to include numbers in your password"
   );
   var passSpecial = confirm(
-    "Confirm if you would want to include special characters in your password (i.e. *&^"
+    "Confirm if you would want to include special characters in your password (i.e. *&^)"
   );
   while (
     passUpper === false &&
