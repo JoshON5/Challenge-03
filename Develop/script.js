@@ -31,10 +31,10 @@ var passLength = prompt("How long of a password do you require?");
       var passUpper = confirm("Confirm if you would want to include uppercase characters in your password");
       var passLower = confirm("Confirm if you would want to include lowercase characters in your password");
       var passNum = confirm("Confirm if you would want to include numbers in your password");
-      var passSpecial = confrim("Confirm if you would want to include special characters in your password (i.e. *&^)")  
+      var passSpecial = confirm("Confirm if you would want to include special characters in your password (i.e. *&^)")  
     }
 } 
-var enchilida = upperCase.concat("", lowerCase, "", numbers, "", spChars);
+var enchilida = upperCase.concat("", lowerCase, numbers, spChars);
 console.log(enchilida)
 var randomPass = ""
 for (var i = 0; i < passLength; i++) {
