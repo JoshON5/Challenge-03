@@ -10,15 +10,38 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var spChars = ["~","@","!","#","$","%","^","&","*","(",")","_","=","+","{", "}", "[", "]", ";", ".", "<", ">", "?"]
 
+var passLength = "";
+var passSpecial;
+var passNum;
+var passUpper;
+var passLower;
 
-
-
-
-
-
-
-
-
+function generatePassword() {
+var passLength = prompt("How long of a password do you require?");
+    while(passLength <= 8 || passLength >= 128) {
+      alert("Password must be between 8-128 characters")
+      var passLength = prompt("How long of a password do you require?");
+    }
+    var passUpper = confirm("Confirm if you would want to include uppercase characters in your password");
+    var passLower = confirm("Confirm if you would want to include lowercase characters in your password");
+    var passNum = confirm("Confirm if you would want to include numbers in your password");
+    var passSpecial = confirm("Confirm if you would want to include special characters in your password (i.e. *&^")
+    while(passUpper === false && passLower === false && passNum === false && passSpecial === false) {
+      alert("You must choose at least one criteria");
+      var passUpper = confirm("Confirm if you would want to include uppercase characters in your password");
+      var passLower = confirm("Confirm if you would want to include lowercase characters in your password");
+      var passNum = confirm("Confirm if you would want to include numbers in your password");
+      var passSpecial = confrim("Confirm if you would want to include special characters in your password (i.e. *&^)")  
+    }
+} 
+var enchilida = upperCase.concat("", lowerCase, "", numbers, "", spChars);
+console.log(enchilida)
+var randomPass = ""
+for (var i = 0; i < passLength; i++) {
+  randomPass = randomPass + enchilida[Math.floor(Math.random() * enchilida.length)];
+  console.log(randomPass)
+}
+    
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
