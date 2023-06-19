@@ -87,13 +87,13 @@ var spChars = [
   ">",
   "?",
 ];
-
+//made undefined variables to put into the function in define them there. the passLength was an empty string to be filled by the user.
 var passLength = "";
 var passSpecial;
 var passNum;
 var passUpper;
 var passLower;
-
+//created what the generatePassword function will do with window prompts to get the criteria for the user for their custom password.
 function generatePassword() {
   var passLength = prompt("How long of a password do you require?");
   while (passLength < 8 || passLength > 128) {
@@ -112,6 +112,7 @@ function generatePassword() {
   var passSpecial = confirm(
     "Confirm if you would want to include special characters in your password (i.e. *&^)"
   );
+  //This was created to work if the user chose no criteria and would re-ask the questions again.
   while (
     passUpper === false &&
     passLower === false &&
@@ -132,7 +133,7 @@ function generatePassword() {
       "Confirm if you would want to include special characters in your password (i.e. *&^)"
     );
   }
-
+//created a var that would combine each criteria to fit into the criteria.
   var enchilida = [];
   if (passUpper) {
     enchilida = enchilida.concat(upperCase);
@@ -147,7 +148,7 @@ function generatePassword() {
     enchilida = enchilida.concat(spChars);
   }
   console.log(enchilida);
-
+//Math.random was used here to create using a var with an empty string to be filled with the random generated characters.
   var passGen = "";
   for (var i = 0; i < passLength; i++) {
     passGen = passGen + enchilida[Math.floor(Math.random() * enchilida.length)];
